@@ -1,9 +1,5 @@
 
 
-//set balance for everyone.  
-const startPlayerBalance = 10
-const startOpponentBalance = 10
-
 let player
 let opponent
 let playerBet 
@@ -103,3 +99,19 @@ console.log("final result")
 console.log(testpot3)
 console.log(testPlayerBalance3)
 console.log(testOpponentBalance3)
+
+let startPlayerBalance = 10;
+let startOpponentBalance = 10;
+
+function setupBalances(opponents) {
+    let playerBalance = startPlayerBalance;
+    let opponentsBalance = [];
+
+    for (let opponent of opponents) {
+        opponentsBalance.push(startOpponentBalance);
+    }
+
+    return [opponentsBalance, playerBalance];
+}
+
+module.exports = { setupBalances };
